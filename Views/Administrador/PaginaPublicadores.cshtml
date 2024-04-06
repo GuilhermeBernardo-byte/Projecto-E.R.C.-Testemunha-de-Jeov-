@@ -1,0 +1,942 @@
+﻿
+@{
+    ViewBag.Title = "Pagina Publicadores";
+}
+<link rel="stylesheet" type="text/css" href="~/Views/fontawesome/fontawesome-all.css" />
+
+<style>
+    #containerPrincipal {
+        height: calc(100vh);
+        max-height: 1000px;
+        margin: 0;
+        box-shadow: 0px 0px 0px red;
+        /*border:1px solid red;*/
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        /*display: grid;
+        grid-template-columns:100% 100%;
+        grid-template-rows: 10% 100%;*/
+        overflow: auto;
+    }
+
+
+
+    #main1 {
+        /*height:100%;*/
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #fafafa;
+        background-color:#f5f5f6;
+
+    }
+
+    #main1-content {
+        padding: 10vh 0 0 15vh;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .div-favoritos {
+        padding: 0;
+        margin: 0;
+        gap: 2rem;
+        column-gap: 1rem;
+
+    }
+
+    .span-title {
+        font-size: 4vh;
+        padding: 1rem;
+        color: #0c2752;
+    }
+
+    .article-favoritos {
+        height: 260px;
+        margin-bottom: 5rem;
+        background-color:#fff;
+        /*background: linear-gradient(to right, #6a81b3, #dfdfdf);*/
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+    /*6a81b3*/
+    .span-descricao {
+        width: 100%;
+        height: 60%;
+        background-color: #cbd7fa;
+        color: #f6f7f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px 10px 0 0;
+        /*outline:5px solid #6a81b3;*/
+    }
+
+    .section-conteudo {
+        height: 40%;
+        width: 100%;
+        background-color: #fff;
+        /*box-shadow:0 0 5px #dfdfdf;*/
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 2rem;
+    }
+
+    .conteudo-title {
+        font-size: min(2.5vh);
+        font-size: 3vh;
+        color: #808080;
+        color: #0088cc;
+        font-weight: 500;
+    }
+
+    .btn-default {
+        border: 1px solid #cbd7fa;
+    }
+
+
+    .div-estatistica {
+        padding: 0;
+        margin: 0;
+        column-gap: 1rem;
+    }
+
+    .article-estatistica {
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        background-color: #fafafa;
+        background-color:#f5f5f6;
+        color: #0c2752;
+        margin-bottom: 15px;
+        padding: 2rem;
+    }
+
+    .section-estatistica {
+        height: 100%;
+        background-color: #fff;
+        padding: 1rem;
+    }
+
+    #imagem {
+        height: 95%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item-estatistica {
+        display: flex;
+        /*width:100%;*/
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+
+    .itens {
+        /*width:40%;*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 2vh;
+    }
+
+    .cor-item {
+        display: block;
+        height: 20px;
+        width: 20px;
+        border-radius: 15%;
+    }
+
+    #section-pesquisarOrdenar{
+        display:flex;
+        flex-wrap:wrap;
+    }
+
+
+
+    .div-pesquisaOrdem{
+        padding:2vh 0;
+        /*height:70px;*/
+
+        display:flex;
+        flex-wrap:wrap;
+        align-items:center;
+        justify-content:center;
+        /*background-color:#cbd7fa;*/
+        margin:5vh 0 0 0;
+    }
+
+
+
+
+
+
+    th {
+        font-size: 2.5vh;
+        /*border:2px solid #dfdfdf;*/
+    }
+   
+    td {
+        font-size: 2.2vh;
+        border:3px solid #dfdfdf;
+        border-right:1px solid #dfdfdf;
+        border-left:1px solid #dfdfdf;
+
+        
+    }
+
+    tr:nth-child(even){
+        /*background-color:#f8f8f8;*/
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-around;
+        font-size: 2.2vh;
+        color: #0c2752;
+        /*font-weight:bold;*/
+        border-top: 1px solid #dfdfdf;
+        background-color: #fff;
+    }
+
+
+
+
+    #main1-header {
+        box-shadow: 0 1px 5px #dfdfdf;
+        /*height: 75px;*/
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 20vh 1rem 3vh;
+        position: fixed;
+        left: 80px;
+        background-color: #fff;
+    }
+
+    .section-header {
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+    }
+
+    #input-pesquisa {
+        width: 30vh;
+        height: 6vh;
+    }
+
+    #btn-ir {
+        background-color: #dfdfdf;
+    }
+
+    #logo {
+        color: #6a81b3;
+        color: #8690b0;
+        font-size: 3vh;
+    }
+
+    #spanMenu {
+        width: 100%;
+        color: #8690b0;
+        text-align: center;
+        font-size: 3vh;
+    }
+
+    /*1a3257    0c2752*/
+
+
+    #menu {
+        height: 100%;
+        transition: 1s;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px 0;
+        background-color: #0c2752;
+        box-shadow: 7px 0 0 #8690b0;
+        /*indica que vai esconder o conteudo q estiver fora da section*/
+        overflow: hidden;
+        /*position:fixed;*/
+        left: 0;
+        top: 0;
+        margin: 0;
+    }
+
+        #menu:hover {
+            width: 250px;
+            transition: 1s;
+        }
+
+    .esconderMenu {
+        width: 80px;
+        transition: 1s;
+    }
+
+    .mostrarMenu {
+        width: 300px;
+        transition: 1s;
+    }
+
+    .opcoesMenu {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        color: #909090;
+        color: #8690b0;
+        font-size: 3vh;
+    }
+
+        .opcoesMenu i {
+            width: 20px;
+            margin-left: 30px;
+        }
+
+    .spanOpcaoMenu {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 5rem;
+        padding: 20px 0;
+    }
+
+        .spanOpcaoMenu:hover {
+            background-color: #0c275f;
+            color: #cbd7fa;
+        }
+
+    #section-definicoesAjuda {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10vh;
+        color: #8690b0;
+        font-size: 3vh;
+        align-self: flex-end;
+    }
+    .span-definicoesAjuda{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 5rem;
+        padding: 10px 0;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        text-decoration-style: none;
+        text-decoration-line: none;
+    }
+
+    .link-menu {
+        width: 100px;
+        height: 100%;
+    }
+
+    a:hover {
+        color: inherit;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        text-decoration-style: none;
+        text-decoration-line: none;
+    }
+</style>
+
+
+
+<main id="main1" class="row d-flex">
+
+    <div id="main1-header" class="navbar-fixed-top">
+
+        <section class="section-header">
+            <span>Menu</span>
+            <span class="btn-group d-flex">
+                <input id="input-pesquisa" type="text" class="form-control" placeholder="Pesquisar" />
+                <button id="btn-ir" class="btn-default"><i class="glyphicon glyphicon-search"></i></button>
+            </span>
+        </section>
+
+        <section class="section-header" style="color:#909090;display:flex;align-items:center;column-gap:2rem;font-size:2.2vh">
+            <div class="dropdown" style="margin-right:120px">
+                <span style="font-size:2.5vh" data-toggle="dropdown"><i class="glyphicon glyphicon-bell"></i></span>
+                <ul class="dropdown-menu">
+                    <li style="display:flex;align-items:center;font-size:2.2vh;height:6vh" class="dropdown-item bg-primary text-light">Notificações</li>
+                    <li style="display:flex;align-items:center;column-gap:1rem;font-size:2.2vh;height:5vh" class="dropdown-item"><i class="glyphicon glyphicon-bell"></i>Fernando Afonso, enviou o seu relatório</li>
+                    <li style="display:flex;align-items:center;column-gap:1rem;font-size:2.2vh;height:5vh" class="dropdown-item"><i class="glyphicon glyphicon-bell"></i>José Luis, está inativo</li>
+                    <li style="display:flex;align-items:center;column-gap:1rem;font-size:2.2vh;height:5vh" class="dropdown-item">Ver todas notificações</li>
+                </ul>
+            </div>
+
+            <div class="" style="display:flex;align-items:center;column-gap:1rem">
+                <span style="display:flex;column-gap:1rem;font-size:2.5vh"><i class="glyphicon glyphicon-user"></i>Adm</span>
+
+                <div class="dropdown" style="margin-right:120px">
+                    <button class="btn dropdown-toggle" data-toggle="dropdown" style="height:40px"></button>
+                    <ul class="dropdown-menu">
+                        <li style="display:flex;align-items:center;font-size:2.2vh;height:6vh" class="dropdown-item bg-primary text-light">Minha conta</li>
+                        <li style="display:flex;align-items:center;column-gap:1rem;font-size:2.2vh;height:5vh" class="dropdown-item"><i class="glyphicon glyphicon-cog"></i>Definicoes da conta</li>
+                        <li style="display:flex;align-items:center;column-gap:1rem;font-size:2.2vh;height:5vh" class="dropdown-item"><i class="glyphicon glyphicon-log-out"></i>Terminar sessao</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+    </div>
+
+
+    <menu id="menu" class="esconderMenu navbar-fixed-top col-sm-0 col-md-2">
+        <span id="logo" class="navbar-brand"><i class="fas fa-bars"></i>Logo</span>
+        <span id="spanMenu">
+            <span id="iconeMenu" class="">Menu</span>
+        </span>
+
+        <section class="opcoesMenu">
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-home"></i>  <a class="link-menu" @Html.ActionLink("Congregação", "PaginaInicial", "Administrador") </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-briefcase"></i>  <a class="link-menu" @Html.ActionLink("Grupos", "PaginaInicial", "Administrador") </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-calendar"></i>  <a class="link-menu" @Html.ActionLink("Relatorio", "PaginaInicial", "Administrador")  </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-user"></i>  <a class="" link-menu" @Html.ActionLink("Publicadores", "PaginaPublicadores", "Administrador")  </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-bookmark"></i>  <a class="link-menu" @Html.ActionLink("Pioneiros", "PaginaInicial", "Administrador") </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-ban-circle"></i>  <a class="link-menu" @Html.ActionLink("Inativos", "PaginaInicial", "Administrador")  </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-edit"></i>  <a class="link-menu" @Html.ActionLink("Observacoes", "PaginaInicial", "Administrador") </span>
+
+
+        </section>
+
+        <section id="section-definicoesAjuda" class="opcoesMenu">
+            <span id="spanDefinicoes" class="span-definicoesAjuda"><i class="glyphicon glyphicon-cog"></i>Definicoes</span>
+            <span id="spanAjuda" class="span-definicoesAjuda"><i class="glyphicon glyphicon-question-sign"></i>Ajuda</span>
+        </section>
+    </menu>
+
+
+    <div id="main1-content" class="row col-sm-12">
+        
+
+
+
+        <div class="col-md-4 col-xs-12 col-sm-12 div-estatistica  row">
+            <span class="span-title">Estatistica</span>
+
+            <article class="col-md-12 article-estatistica">
+                <section class="col-md-12 section-estatistica">
+                    <span class="conteudo-title">Mes passado</span>
+                    <hr />
+
+                    <div class="text-center" style="margin:auto" id="imagem">
+                        <span class="span-descricao"><img style="width:100%;height:100%" alt="icone-imagem" src="~/fonts/Captura de ecrã_27-3-2024_231211_.jpeg" /></span>
+                        @*<img  alt="estatistica do mes passado" src="~/fonts/Captura de ecrã_27-3-2024_231211_.jpeg" />*@
+
+                        <div class="item-estatistica row col-md-12">
+                            <div class="itens col-xs-6">Publicadores com actividade <span style="background-color:blue" class="cor-item"></span></div>
+                            <div class="itens col-xs-6">Publicadores sem actividade <span style="background-color:darkorange" class="cor-item"></span></div>
+                            <div class="itens col-xs-6">Pionerios <span style="background-color:yellow" class="cor-item"></span></div>
+                            <div class="itens col-xs-6">Estudos dirigidos<span style="background-color:lightcoral" class="cor-item"></span></div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <article class="col-md-12 article-estatistica" style="position:sticky">
+                <section class="col-md-12 section-estatistica">
+                    <span class="conteudo-title">Estudos dirigidos</span>
+                    <hr />
+
+                    <div class="text-center" style="margin:auto" id="imagem">
+                        <span class="span-descricao"><img style="width:100%;height:100%" alt="icone-imagem" src="~/fonts/Captura de ecrã_27-3-2024_231211_.jpeg" /></span>
+                        @*<img  alt="estatistica do mes passado" src="~/fonts/Captura de ecrã_27-3-2024_231211_.jpeg" />*@
+
+                        <div class="item-estatistica row col-md-12">
+                            <div class="itens col-xs-6">Publicadores com actividade <span style="background-color:blue" class="cor-item"></span></div>
+                            <div class="itens col-xs-6">Publicadores sem actividade <span style="background-color:darkorange" class="cor-item"></span></div>
+                            <div class="itens col-xs-6">Pionerios <span style="background-color:yellow" class="cor-item"></span></div>
+                            <div class="itens col-xs-6">Estudos dirigidos<span style="background-color:lightcoral" class="cor-item"></span></div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+        </div>
+
+        <div class="col-md-8 col-xs-12 col-sm-12 div-favoritos">
+
+            <section id="section-pesquisarOrdenar" class="col-md-12 col-xs-12 col-sm-12" style="">
+                <div class="col-md-8 col-xs-8 col-sm-8 btn-group div-pesquisaOrdem">
+                    <input placeholder="Pesquise aqui..." style="" id="input-pesquisa" type="search" class="form-control col-md-2 col-xs-1"/>
+                    
+                    <div class="dropdown col-md-2">
+                        <button class="btn dropdown-toggle" data-toggle="dropdown" style="height:40px"></button>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">Pesquisar por nome</li>
+                            <li class="dropdown-item">Pesquisar por grupo</li>
+                            <li class="dropdown-item">Pesquisar por designacao</li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="btn-primary col-md-1 col-xs-3" style="height:40px"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+                <div class="col-md-4 col-xs-4 col-sm-4 dropdown div-pesquisaOrdem" style="">
+                     <span class="col-md-8" style="font-size:2.5vh">Ordenar por</span>
+                    <button class="btn dropdown-toggle" data-toggle="dropdown" style="height:40px"></button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item">Nome - ordem alfbetica</li>
+                        <li class="dropdown-item">Grupo - ordem numerica</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr />
+
+            <section class="col-md-12 col-xs-12 col-sm-12 table-responsive" style="">
+                <table class=" table table-hover" style="background-color:#fff">
+                    <thead class="bg-primary text-light" style="">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Sexo</th>
+                            <th>Grupo</th>
+                            <th>Mais</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i  class="glyphicon glyphicon-bell" ></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png"  /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+                                    
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr><tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i  class="glyphicon glyphicon-bell" ></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png"  /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+                                    
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Afonso Luis Domingos</td>
+                            <td>Masculino</td>
+                            <td>1</td>
+                            <td class="btn-group" style="margin-right:100px">
+                                <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                <ul class="dropdown-menu" style="width:200px">
+                                    <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                    <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                        <div style="font-size:2.2vh">Fernando Domingos</div>
+                                        <div style="font-size:2.2vh">Grupo 1</div>
+                                        <div style="font-size:2.2vh">Servo ministerial</div>
+                                        <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                        <div style="font-size:2.2vh">19 anos</div>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                        
+                       
+                    </tbody>
+                </table>
+            </section>
+
+
+        </div>
+
+       
+        
+
+    </div>
+
+
+    @*<footer class="navbar-fixed-bottom">
+            <span>Sistema de entrega de relatorios</span>
+            <span>2024</span>
+        </footer>*@
+
+
+
+</main>
+
+
