@@ -1,0 +1,149 @@
+﻿@using PROJECTO_TLP.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Iniciar sessão";
+}
+
+<style>
+    #main-login {
+        margin: auto;
+        padding: 2vh 2vh 5vh 2vh;
+        background-color: #fff;
+        max-width: 800px;
+        box-shadow: 0 0 10px #dfdfdf;
+    }
+
+    .control-label {
+        font-size: 2.2vh;
+    }
+
+    #aside {
+        max-width: 800px;
+        margin: auto;
+        background-color: #cbd7fa;
+        color: #404040;
+        box-shadow: 0 0 2px silver;
+        padding: 2vh 5vh 5vh 5vh;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    #div-opcao {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 1rem;
+    }
+
+    .btn-opcao {
+        background: transparent;
+        width: 45%;
+        height: 50px;
+        border: none;
+        outline: none;
+        text-decoration: none;
+        font-size: 3vh;
+        transition: 0.2s;
+    }
+
+        .btn-opcao:hover {
+            transform: scale(1.1, 1.1);
+            border: none;
+            padding-bottom: 5px;
+            /*border-bottom:3px solid;*/
+        }
+
+    a {
+        text-decoration: none;
+        border: none;
+        outline: none;
+        text-decoration-style: none;
+        text-decoration-line: none;
+    }
+
+    /*validacao dos campos*/
+
+    /*.form-control:valid{
+
+     }
+     .form-control:invalid{
+
+     }*/
+
+    .input-invalido {
+        border: 1px solid red;
+    }
+
+        .input-invalido::after() {
+            content: 'Campo invalido';
+        }
+
+    .input-valido {
+        border: 1px solid #dedede;
+    }
+
+    .div-alerta {
+        padding: 1rem;
+        display: none;
+    }
+</style>
+
+
+<div id="div-login">
+
+
+    <main id="main-login" class="container row">
+        <aside id="aside" class="container row" role="complementary">
+            <h1 style="font-size:40px">Congregação <span class="text-primary">Combal-18</span> </h1>
+            <h1>Relatório de serviço de campo</h1>
+
+
+            <div id="div-opcao">
+                <a class="btn-opcao text-primary" @Html.ActionLink("Criar conta", "registro", "conta") </a>
+                <a class="btn-opcao text-primary" @Html.ActionLink("Iniciar sessao", "login", "conta") </a>
+            </div>
+        </aside>
+
+        <h2>@ViewBag.Title.</h2>
+        <hr />
+        <div class="form-group row">
+            <div class=" col-md-5"><label for="input-nome" class="control-label">Nome</label></div>
+            <div class="col-md-7"><input onchange="validarCamposLogin" type="text" id="input-nome" class="form-control input-login" required /><div class="text-danger div-alerta">Campo invalido!!</div></div>
+        </div>
+
+        <div class="form-group row">
+            <div class=" col-md-5"><label for="input-palavra-passe" class="control-label ">Palavra-passe</label></div>
+            <div class="col-md-7"><input type="password" id="input-palavra-passe" class="form-control input-login" required /><div class="text-danger div-alerta">Campo invalido!!</div></div>
+        </div>
+
+        <div id="divTeste" style="display:flex;width:100%;column-gap:5vh;justify-content:flex-start;flex-wrap:wrap">
+            @*<a class="btn btn-primary" role="button" asp-controller="EsqueceuPasse" asp-action="Index">Esqueceu a palavra-passe?</a>*@
+            @*sintaxe:   @Html.ActionLink("texto do link", "a pagina","a pasta onde esta a pagina") *@
+            @*sintaxe:   @Html.ActionLink("texto do link", "a accao/metodo","a controller") *@
+
+            <div class="row col-md-offset-0" style="width:150%;padding:0 0 10px 0">
+                <div class="col-md-12" style="font-size:2.5vh">
+                    @Html.ActionLink("Esqueceu a palavra-passe?", "EsqueceuPasse", "RecuperarConta")
+                </div>
+
+            </div>
+
+
+            <a id="btn-login" style="height:40px;font-size:2.5vh" class="btn col-md-6 btn-primary" @Html.ActionLink("Iniciar sessão", "PaginaInicial", "Administrador")</a>
+
+        </div>
+    </main>
+
+</div>
+
+
+@*<footer>
+        <p>&copy; @DateTime.Now.Year - Congreg</p>
+    </footer>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

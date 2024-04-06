@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Confirmar Registro";
+}
+
+<style>
+    #main-confirmar {
+        margin: auto;
+        padding: 2vh 2vh 5vh 2vh;
+        background-color: #fff;
+        max-width: 800px;
+        box-shadow: 0 0 10px #dfdfdf;
+    }
+
+    .control-label {
+        font-size: 2.2vh;
+    }
+
+    #aside {
+        max-width: 800px;
+        margin: auto;
+        height: 250px;
+        background-color: #d2d2fa;
+        color: #404040;
+        box-shadow: 0 0 2px silver;
+        padding: 2vh 5vh;
+        margin-bottom: 10px;
+    }
+</style>
+
+<div>
+
+
+    <main id="main-confirmar" class="container row">
+        <aside id="aside" class="container row" role="complementary">
+            <h1 style="font-size:40px">Congregação <span class="text-primary">Combal-18</span> </h1>
+            <h1>Relatório de serviço de campo</h1>
+        </aside>
+
+        <h2>@ViewBag.Title</h2>
+        <hr />
+
+        <h3>Informacoes pessoais</h3>
+        <div class="table-responsive">
+            <table class=" table table-striped table-hover ">
+                <thead>
+                    <tr>
+                        <th>Nome completo</th>
+                        <th>Email</th>
+                        <th>Palavra passe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fernando</td>
+                        <td>afonso@gmail.com</td>
+                        <td>12234356475</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Informacoes adicionais</h3>
+
+        <div class="table-responsive">
+            <table class=" table table-striped table-hover ">
+                <thead>
+                    <tr>
+                        <th>Data de nascimento</th>
+                        <th>Data de batismo</th>
+                        <th>Anciao</th>
+                        <th>Servo ministerial</th>
+                        <th>Pioneiro ou missionario</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>22-02-2003</td>
+                        <td>22-02-2003</td>
+                        <td class="text-success">Sim</td>
+                        <td class="text-danger"></td>
+                        <td class="text-danger">Nao</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="btn-group col-md-6">
+            <a style="height:40px;font-size:2.5vh" class="btn btn-success col-md-6" @Html.ActionLink("Confirmar", "ConfirmarRegistro", "Conta") </a>
+            <a style="height:40px;font-size:2.5vh" class="btn btn-danger col-md-6" @Html.ActionLink("Cancelar", "Registro2", "Conta")  </a>
+        </div>
+    </main>
+
+
+</div>
+

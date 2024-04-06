@@ -1,0 +1,62 @@
+﻿@model PROJECTO_TLP.Models.ForgotPasswordViewModel
+
+@{
+    ViewBag.Title = "Esqueceu a palavra passe?";
+}
+
+<style>
+    #main-recuperarConta {
+        margin: auto;
+        padding: 5vh 2vh;
+        background-color: #fff;
+        max-width: 800px;
+        box-shadow: 0 0 10px #dfdfdf;
+    }
+
+    .control-label {
+        font-size: 2.2vh;
+    }
+
+    #aside {
+        max-width: 800px;
+        margin: auto;
+        background-color: #cbd7fa;
+        color: #404040;
+        box-shadow: 0 0 2px silver;
+        padding: 2vh 5vh 5vh 5vh;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+</style>
+
+
+<div>
+    <aside id="aside" class="container row" role="complementary">
+        <h1 style="font-size:40px">Congregação <span class="text-primary">Combal-18</span> </h1>
+        <h1>Relatório de serviço de campo</h1>
+    </aside>
+
+    <main id="main-recuperarConta" class="container row">
+        <h2>@ViewBag.Title</h2>
+        <h3>Digite o seu email.</h3>
+        <hr />
+
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+        <div class="form-group row">
+            <div class="col-md-2"><label for="div-email" class="control-label">Email</label></div>
+            <div class="col-md-10"><input type="email" id="div-email" class="form-control" /></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Receber novo passe" />
+            </div>
+        </div>
+    </main>
+
+</div>
+
+
+@* col-md-offset-2    dá espaçamento de duas colunas *@
