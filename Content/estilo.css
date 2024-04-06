@@ -1,0 +1,40 @@
+﻿/*estilo do aside*/
+
+#aside{
+        max-width:800px;
+        margin:auto;
+        height:250px;
+        background-color:#d2d2fa;
+        color:#404040;
+        box-shadow:0 0 2px silver;
+        padding:2vh 5vh;
+        margin-bottom:10px;
+    }
+    #div-opcao{
+        display:flex;
+        justify-content:center;
+        column-gap:2rem;
+    }
+    .btn-opcao{
+        background:transparent;
+        width:30%;
+        height:50px;
+        border:none;
+        outline:none;
+        text-decoration:none;
+        font-size:3vh;
+        transition:0.2s;
+    }
+    .btn-opcao:hover{
+        transform:scale(1.2, 1.2);
+        border:none;
+        padding-bottom:5px;
+        /*border-bottom:3px solid;*/
+    }
+    a{
+        text-decoration:none;
+        border:none;
+        outline:none;
+        text-decoration-style:none;
+        text-decoration-line:none;
+    }
