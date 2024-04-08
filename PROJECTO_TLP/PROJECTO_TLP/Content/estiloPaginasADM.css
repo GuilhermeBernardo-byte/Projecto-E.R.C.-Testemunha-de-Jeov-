@@ -1,0 +1,353 @@
+﻿
+//estilo comum nas paginas
+
+
+#containerPrincipal{
+       height:calc(100vh);
+       max-height:1000px;
+       margin:0;
+
+       box-shadow:0px 0px 0px red;
+       /*border:1px solid red;*/
+    }
+    body{     
+        padding:0;
+        margin:0;
+        height:100%;
+
+        /*display: grid;
+        grid-template-columns:100% 100%;
+        grid-template-rows: 10% 100%;*/
+        overflow:auto;
+    }
+   
+   
+
+    #main1{
+        width:100%;
+        margin:0;
+        padding:0;
+        background-color:#fafafa;
+        background-color:#f5f5f6;
+       
+    }
+    #main1-content{
+        padding:10vh 0 0 15vh;
+        display:flex;
+        flex-wrap:wrap;
+   }
+    .div-favoritos{
+        padding:0;
+        margin:0;
+        gap:2rem;
+        column-gap:1rem;
+    }
+    .span-title{
+        font-size:4vh;
+        padding:1rem;
+        color:#0c2752;
+
+    }
+    .article-favoritos{
+        height:260px;
+        margin-bottom:1rem;
+
+        /*background: linear-gradient(to right, #6a81b3, #dfdfdf);*/
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+    }
+/*6a81b3*/
+    .span-descricao{
+        width:100%;
+        height:60%;
+        background-color:#cbd7fa;
+        color:#f6f7f8;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:10px 10px 0 0;
+        /*outline:5px solid #6a81b3;*/
+       
+    }
+    .section-conteudo{
+        height:40%;
+        width:100%;
+        background-color:#fff;
+        /*box-shadow:0 0 5px #dfdfdf;*/
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:1rem 2rem;
+    }
+    .conteudo-title{
+        font-size:min(2.5vh);
+        font-size:3vh;
+        color:#808080;
+        color:#0088cc;
+        font-weight:500;   
+    }
+    
+    .btn-default{
+        border:1px solid #cbd7fa;
+    }
+
+
+    .div-estatistica{
+        padding:0;
+        margin:0;
+        column-gap:1rem;
+      
+    }
+    .article-estatistica{
+        height:600px;
+        display:flex;
+        flex-direction:column;
+        background-color:#fafafa;
+        background-color:#f5f5f6;
+
+        color:#0c2752;
+        margin-bottom:15px;
+        padding:2rem;
+    }
+    .section-estatistica{
+        height:100%;
+        background-color:#fff;
+        padding:1rem;
+    }
+    #imagem{
+        height:95%;
+        width:80%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+    .item-estatistica{
+        display:flex;
+        /*width:100%;*/
+        justify-content:center;
+        align-items:center;
+        flex-wrap:wrap;
+        padding:1rem;
+        
+    }
+    .itens{
+        /*width:40%;*/
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:space-between;
+        font-size:2vh;
+    }
+    .cor-item{
+        display:block;
+        height:20px;
+        width:20px;
+        border-radius:15%;
+    }
+
+
+
+     #section-pesquisarOrdenar{
+        display:flex;
+        flex-wrap:wrap;
+    }
+
+
+
+.div-pesquisaOrdem {
+    padding: 2vh 0;
+    /*height:70px;*/
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /*background-color:#cbd7fa;*/
+    margin: 5vh 0 0 0;
+}
+
+    th{
+        font-size:2.5vh;
+    }
+    td{
+        font-size: 2.2vh;
+        /*border:3px solid #dfdfdf;
+        border-right:1px solid #dfdfdf;
+        border-left:1px solid #dfdfdf;*/
+    }
+     tr:nth-child(even){
+        /*background-color:#f8f8f8;*/
+    }
+    footer{
+        display:flex;
+        justify-content:space-around;
+        font-size:2.2vh;
+        color:#0c2752;
+        /*font-weight:bold;*/
+
+        border-top:1px solid #dfdfdf;
+        background-color:#fff;
+        
+    }
+   
+
+
+
+   #main1-header{
+       box-shadow:0 1px 5px #dfdfdf;
+       /*height:75px;*/
+       display:flex;
+       flex-wrap:wrap;
+       justify-content:space-between;
+      
+       align-items:center;
+       padding:1rem 20vh 1rem 3vh;
+       position:fixed;
+       left:80px;
+       background-color: #fff;
+       
+   }
+   .section-header{
+       display:flex;
+       align-items:center;
+       column-gap:1rem;
+   }
+   #input-pesquisa{
+        width:30vh;
+        height:5vh;
+    }
+   #btn-ir{
+        background-color:#dfdfdf;
+     
+   }
+
+    #logo{
+        color:#6a81b3;
+       color:#8690b0;
+       font-size:3vh;
+    }
+    #spanMenu{
+        width:100%;
+       color:#8690b0;
+       text-align:center;
+       font-size:3vh;
+    }
+
+    /*1a3257    0c2752*/
+
+
+    #menu{
+    height: 100%;
+
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 0;
+    background-color: #0c2752;
+    box-shadow: 7px 0 0 #8690b0;
+   
+    /*indica que vai esconder o conteudo q estiver fora da section*/ 
+    overflow: hidden;
+    /*position:fixed;*/
+    left: 0;
+    top: 0;
+    margin:0;
+  
+
+}
+ #menu:hover{
+    width: 250px;
+    transition: 1s;
+} 
+ 
+.esconderMenu{
+    width: 80px;
+    transition: 1s;
+}
+.mostrarMenu{
+    width: 300px;
+    transition: 1s;
+ }
+
+.opcoesMenu{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    color: #909090;
+    color:#8690b0;
+    font-size: 3vh;
+}
+.opcoesMenu i{
+    width: 20px;
+    margin-left: 30px;
+}
+
+.spanOpcaoMenu{
+    width:100%;
+    height:100%;
+    display: flex;
+    gap: 5rem;
+    padding: 20px 0;
+}
+.spanOpcaoMenu:hover{
+   background-color: #0c275f;
+   color: #cbd7fa;
+}
+
+ #section-definicoesAjuda {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10vh;
+        color: #8690b0;
+        font-size: 3vh;
+        align-self: flex-end;
+    }
+    .span-definicoesAjuda{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 5rem;
+        padding: 10px 0;
+    }
+ a{
+        color:inherit;
+        text-decoration:none;
+        border:none;
+        outline:none;
+        text-decoration-style:none;
+        text-decoration-line:none;
+
+    }
+
+ .link-menu{
+      width:100px;
+      height:100%;
+ }
+ a:hover{
+     color:inherit;
+        text-decoration:none;
+        border:none;
+        outline:none;
+        text-decoration-style:none;
+        text-decoration-line:none;
+    }
+
+
+ //pagina definicoes
+ .lista-titulo{
+     font-size:3vh;
+ }
+ li{
+     list-style:none;
+     font-size:2.5vh;
+ }
+
+
+
+
+
+ 

@@ -1,0 +1,191 @@
+﻿
+@{
+    ViewBag.Title = "Pagina definicoes";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/estiloPaginasADM.css" />
+
+
+<main id="main1" class="row d-flex">
+
+    <div id="main1-header" class="navbar-fixed-top">
+
+        <section class="section-header">
+            <span>Menu</span>
+            <span class="btn-group d-flex">
+                <input id="input-pesquisa" type="search" class="form-control" placeholder="Pesquisar" />
+                <button id="btn-ir" class="btn-default"><i class="glyphicon glyphicon-search"></i></button>
+            </span>
+        </section>
+
+        <section class="section-header" style="color:#909090;display:flex;align-items:center;column-gap:2rem;font-size:2.2vh">
+            <div class="dropdown" style="margin-right:120px">
+                <span style="font-size:2.5vh" data-toggle="dropdown"><i class="glyphicon glyphicon-bell"></i></span>
+                <ul class="dropdown-menu">
+                    <li style="display:flex;align-items:center;font-size:2.2vh;height:6vh" class="dropdown-item bg-primary text-light">Notificações</li>
+                    <li style="display:flex;align-items:center;column-gap:1rem;font-size:2.2vh;height:5vh" class="dropdown-item"><i class="glyphicon glyphicon-bell"></i>Fernando Afonso, enviou o seu relatório</li>
+                    <li style="display:flex;align-items:center;column-gap:1rem;font-size:2.2vh;height:5vh" class="dropdown-item"><i class="glyphicon glyphicon-bell"></i>José Luis, está inativo</li>
+                    <li style="display:flex;align-items:center;column-gap:1rem;font-size:2.2vh;height:5vh" class="dropdown-item">Ver todas notificações</li>
+                </ul>
+            </div>
+            <div class="" style="display:flex;align-items:center;column-gap:1rem">
+                <span style="display:flex;column-gap:1rem;font-size:2.5vh"><i class="glyphicon glyphicon-user"></i>Adm</span>
+
+                <div class="dropdown" style="margin-right:120px">
+                    <button class="btn dropdown-toggle" data-toggle="dropdown" style="height:40px"></button>
+                    <ul class="dropdown-menu">
+                        <li style="display:flex;align-items:center;font-size:2.2vh;height:6vh" class="dropdown-item bg-primary text-light">Minha conta</li>
+                        <li style="display:flex;align-items:center;column-gap:1rem;font-size:2.2vh;height:5vh" class="dropdown-item"><i class="glyphicon glyphicon-cog"></i>Definicoes da conta</li>
+                        <li style="display:flex;align-items:center;column-gap:1rem;font-size:2.2vh;height:5vh" class="dropdown-item"><i class="glyphicon glyphicon-log-out"></i>Terminar sessao</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+    </div>
+
+
+    <menu id="menu" class="esconderMenu navbar-fixed-top col-sm-0 col-md-2">
+        <span id="logo" class="navbar-brand"><i class="fas fa-bars"></i>Logo</span>
+        <span id="spanMenu">
+            <span id="iconeMenu" class="">Menu</span>
+        </span>
+
+        <section class="opcoesMenu">
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-home"></i>  <a class="link-menu" @Html.ActionLink("Congregação", "PaginaInicial", "Administrador") </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-briefcase"></i>  <a class="link-menu" @Html.ActionLink("Grupos", "PaginaInicial", "Administrador") </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-calendar"></i>  <a class="link-menu" @Html.ActionLink("Relatorio", "PaginaInicial", "Administrador")  </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-user"></i>  <a class="" link-menu" @Html.ActionLink("Publicadores", "PaginaPublicadores", "Administrador")  </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-bookmark"></i>  <a class="link-menu" @Html.ActionLink("Pioneiros", "PaginaInicial", "Administrador") </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-ban-circle"></i>  <a class="link-menu" @Html.ActionLink("Inativos", "PaginaInicial", "Administrador")  </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-edit"></i>  <a class="link-menu" @Html.ActionLink("Observacoes", "PaginaInicial", "Administrador") </span>
+
+            @*glyphicon glyphicon-pushpin        glyphicon glyphicon-trash      glyphicon glyphicon-comment    glyphicon glyphicon-bookmark   glyphicon glyphicon-folder-open   glyphicon glyphicon-lock         glyphicon glyphicon-gift*@
+
+        </section>
+
+        <section id="section-definicoesAjuda" class="opcoesMenu">
+            <span id="spanDefinicoes" class="span-definicoesAjuda"><i class="glyphicon glyphicon-cog"></i><a class="link-menu" @Html.ActionLink("Definicoes", "PaginaDefinicoes", "Administrador") </a></span>
+            <span id="spanAjuda" class="span-definicoesAjuda"><i class="glyphicon glyphicon-question-sign"></i><a class="link-menu" @Html.ActionLink("Ajuda", "PaginaAjuda", "Administrador") </a></span>
+        </section>
+    </menu>
+
+
+    <div id="main1-content" class="row col-sm-12">
+        <span class="span-title col-md-12 col-xs-12 col-sm-12">Definicoes</span>
+
+        <article class="col-md-6 col-xs-12 col-sm-12">
+            <ul class="list-group col-md-12 col-xs-12 col-sm-12">
+                <li class="list-group-item-heading" style="font-size:3vh">Administrativas</li>
+                <li class="list-group-item">Adicionar Administrador</li>
+                <li class="list-group-item">Remover membro</li>
+                <li class="list-group-item">Editar designacao</li>
+                <li class="list-group-item">Alterar dados da congregacao</li>
+            </ul>
+
+            <ul class="list-group col-md-12 col-xs-12 col-sm-12">
+                <li class="list-group-item-heading" style="font-size:3vh">Aplicacao</li>
+                <li class="list-group-item">Sobre</li>
+                <li class="list-group-item">Termos e licensas</li>
+            </ul>
+
+            <ul class="list-group col-md-12 col-xs-12 col-sm-12">
+                <li class="list-group-item-heading" style="font-size:3vh">Preferencias</li>
+                <li class="list-group-item">Modo claro</li>
+                <li class="list-group-item">Modo escuro</li>
+            </ul>
+        </article>
+        <article class="col-md-6 col-xs-12 col-sm-12">
+            @*aqui tera muitas divs, e serao visiveis de acordo a opcao de definicao*@
+
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <span class="span-opcaoDefinicao col-md-12 col-xs-12 col-sm-12" style="font-size:3vh">Remover membro</span>
+
+                <section class="col-md-12 col-xs-12 col-sm-12 row" style="margin-top:3vh">
+                    <label for="nome" class="col-md-4 col-xs-12 col-sm-12" style="font-size:2.5vh">Informe o nome</label>
+                    <div class="btn-group col-md-8 col-xs-12 col-sm-12" style="display:flex">
+                        <input type="search" placeholder="Pesquisar..." class="form-control" id="input-pesquisa" />
+                        <button type="button" class="btn-primary col-md-5 col-xs-5 col-sm-5" style="height:40px;display:flex;align-items:center;justify-content:center;font-size:2.2vh;gap:1rem">Pesquisar<i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </section>
+
+                <hr />
+
+                <section class="col-md-12 col-xs-12 col-sm-12 table-responsive">
+                    <table class=" table table-hover" style="background-color:#fff">
+                        <thead class="bg-primary text-light" style="">
+                            <tr>
+                                <th>Nome</th>
+                                <th>Sexo</th>
+                                <th>Grupo</th>
+                                <th>Acção</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fernando Afonso Luis Domingos</td>
+                                <td>Masculino</td>
+                                <td>1</td>
+                                <td class="btn-group" style="margin-right:100px">
+                                    <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                    <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                    <ul class="dropdown-menu" style="width:200px">
+                                        <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                        <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                            <div style="font-size:2.2vh">Fernando Domingos</div>
+                                            <div style="font-size:2.2vh">Grupo 1</div>
+                                            <div style="font-size:2.2vh">Servo ministerial</div>
+                                            <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                            <div style="font-size:2.2vh">19 anos</div>
+                                        </li>
+
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fernando Afonso Luis Domingos</td>
+                                <td>Masculino</td>
+                                <td>1</td>
+                                <td class="btn-group" style="margin-right:100px">
+                                    <button class="text-light bg-warning"><i class="glyphicon glyphicon-bell"></i></button>
+                                    <button class="btn-primary" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                    <ul class="dropdown-menu" style="width:200px">
+                                        <li style="height:15vh;display:flex;flex-direction:column;margin-bottom:2rem" class="dropdown-item"> <img height="100%" width="100%" src="~/fonts/image-portifolio2.png" /> </li>
+                                        <li style="height:20vh;display:flex;flex-direction:column" class="dropdown-item">
+                                            <div style="font-size:2.2vh">Fernando Domingos</div>
+                                            <div style="font-size:2.2vh">Grupo 1</div>
+                                            <div style="font-size:2.2vh">Servo ministerial</div>
+                                            <div style="font-size:2.2vh">Pioneiro Regular</div>
+                                            <div style="font-size:2.2vh">19 anos</div>
+                                        </li>
+
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <hr />
+
+                <section style="font-size:2.5vh">
+                    <span class="text-danger">Obs:</span> apenas remove se for uma conta suspeita, ilegal ou pertencente a um desassociado
+
+                </section>
+            </div>
+
+        </article>
+
+    </div>
+
+
+
+
+
+</main>
+
+
+
+

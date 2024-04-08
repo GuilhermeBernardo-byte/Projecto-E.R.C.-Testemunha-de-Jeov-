@@ -1,0 +1,173 @@
+﻿
+@{
+    ViewBag.Title = "Pagina Inicial";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/estiloPaginasADM.css" />
+
+<style>
+
+
+</style>
+
+
+
+<main id="main1" class="row d-flex">
+
+    <div id="main1-header" class="navbar-fixed-top">
+
+        <section class="section-header">
+            <span>Menu</span>
+            <span class="btn-group d-flex">
+                <input id="input-pesquisa" type="text" class="form-control" placeholder="Pesquisar" />
+                <button id="btn-ir" class="btn-default"><i class="glyphicon glyphicon-search"></i></button>
+            </span>
+        </section>
+
+        <section class="section-header" style="color:#909090;display:flex;align-items:center;column-gap:2rem;font-size:2.2vh">
+            <div class="dropdown" style="margin-right:120px">
+                <span style="font-size:2.5vh" data-toggle="dropdown"><i class="glyphicon glyphicon-bell"></i></span>
+                <ul class="dropdown-menu">
+                    <li style="display:flex;align-items:center;font-size:2.2vh;height:6vh" class="dropdown-item bg-primary text-light">Notificações</li>
+                    <li style="display:flex;align-items:center;column-gap:1rem;font-size:2.2vh;height:5vh" class="dropdown-item"><i class="glyphicon glyphicon-bell"></i>Fernando Afonso, enviou o seu relatório</li>
+                    <li style="display:flex;align-items:center;column-gap:1rem;font-size:2.2vh;height:5vh" class="dropdown-item"><i class="glyphicon glyphicon-bell"></i>José Luis, está inativo</li>
+                    <li style="display:flex;align-items:center;column-gap:1rem;font-size:2.2vh;height:5vh" class="dropdown-item">Ver todas notificações</li>
+                </ul>
+            </div>
+            <div class="" style="display:flex;align-items:center;column-gap:1rem">
+                <span style="display:flex;column-gap:1rem;font-size:2.5vh"><i class="glyphicon glyphicon-user"></i>Adm</span>
+
+                <div class="dropdown" style="margin-right:120px">
+                    <button class="btn dropdown-toggle" data-toggle="dropdown" style="height:40px"></button>
+                    <ul class="dropdown-menu">
+                        <li style="display:flex;align-items:center;font-size:2.2vh;height:6vh" class="dropdown-item bg-primary text-light">Minha conta</li>
+                        <li style="display:flex;align-items:center;column-gap:1rem;font-size:2.2vh;height:5vh" class="dropdown-item"><i class="glyphicon glyphicon-cog"></i>Definicoes da conta</li>
+                        <li style="display:flex;align-items:center;column-gap:1rem;font-size:2.2vh;height:5vh" class="dropdown-item"><i class="glyphicon glyphicon-log-out"></i>Terminar sessao</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+    </div>
+
+
+    <menu id="menu" class="esconderMenu navbar-fixed-top col-sm-0 col-md-2">
+        <span id="logo" class="navbar-brand"><i class="fas fa-bars"></i>Logo</span>
+        <span id="spanMenu">
+            <span id="iconeMenu" class="">Menu</span>
+        </span>
+
+        <section class="opcoesMenu">
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-home"></i>  <a class="link-menu" @Html.ActionLink("Congregação", "PaginaInicial", "Administrador") </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-briefcase"></i>  <a class="link-menu" @Html.ActionLink("Grupos", "PaginaInicial", "Administrador") </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-calendar"></i>  <a class="link-menu" @Html.ActionLink("Relatorio", "PaginaInicial", "Administrador")  </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-user"></i>  <a class="" link-menu" @Html.ActionLink("Publicadores", "PaginaPublicadores", "Administrador")  </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-bookmark"></i>  <a class="link-menu" @Html.ActionLink("Pioneiros", "PaginaInicial", "Administrador") </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-ban-circle"></i>  <a class="link-menu" @Html.ActionLink("Inativos", "PaginaInicial", "Administrador")  </span>
+            <span id="spanInicio" class="spanOpcaoMenu"><i class="glyphicon glyphicon-edit"></i>  <a class="link-menu" @Html.ActionLink("Observacoes", "PaginaInicial", "Administrador") </span>
+
+            @*glyphicon glyphicon-pushpin        glyphicon glyphicon-trash      glyphicon glyphicon-comment    glyphicon glyphicon-bookmark   glyphicon glyphicon-folder-open   glyphicon glyphicon-lock         glyphicon glyphicon-gift*@
+
+        </section>
+
+        <section id="section-definicoesAjuda" class="opcoesMenu">
+            <span id="spanDefinicoes" class="span-definicoesAjuda"><i class="glyphicon glyphicon-cog"></i><a class="link-menu" @Html.ActionLink("Definicoes", "PaginaDefinicoes", "Administrador") </a></span>
+            <span id="spanAjuda" class="span-definicoesAjuda"><i class="glyphicon glyphicon-question-sign"></i><a class="link-menu" @Html.ActionLink("Ajuda", "PaginaAjuda", "Administrador") </a></span>
+        </section>
+    </menu>
+
+
+    <div id="main1-content" class="row col-sm-12">
+        <div class="col-md-7 col-xs-12 col-sm-12 div-favoritos  row">
+            <span class="col-md-offset-1 col-md-7 col-xs-12 col-sm-12 span-title">Favoritos</span>
+            <article class="col-md-offset-1 col-md-5 article-favoritos">
+                <span class="span-descricao"><i style="font-size:15vh" class="glyphicon glyphicon-briefcase text-light"></i></span>
+                <section class="section-conteudo">
+                    <span class="conteudo-title">Grupos de servico</span>
+                    <div class="row col-xs-12">
+                        <button class="btn btn-primary col-xs-6">Visualizar</button>
+                        <button class="btn btn-default col-xs-6">Adicionar</button>
+                    </div>
+                </section>
+            </article>
+            <article class="col-md-5 article-favoritos">
+                <span class="span-descricao"><i style="font-size:15vh" class="glyphicon glyphicon-calendar text-light"></i></span>
+                <section class="section-conteudo">
+                    <span class="conteudo-title">Relatorio</span>
+                    <div class="row col-xs-12">
+                        <button class="btn btn-primary col-xs-6">Visualizar</button>
+                        <button class="btn btn-default col-xs-6">Adicionar</button>
+                    </div>
+                </section>
+            </article>
+            <article class="col-md-offset-1 col-md-5 article-favoritos">
+                <span class="span-descricao"><i style="font-size:15vh" class="glyphicon glyphicon-bookmark text-light"></i></span>
+                <section class="section-conteudo">
+                    <span class="conteudo-title">Pioneiros</span>
+                    <div class="row col-xs-12">
+                        <button class="btn btn-primary col-xs-6">Visualizar</button>
+                        <button class="btn btn-default col-xs-6">Adicionar</button>
+                    </div>
+                </section>
+            </article>
+            <article class="col-md-5 article-favoritos">
+                <span class="span-descricao"><i style="font-size:15vh" class="glyphicon glyphicon-user text-light"></i></span>
+                <section class="section-conteudo">
+                    <span class="conteudo-title">Publicadores</span>
+                    <div class="row col-xs-12">
+                        <button class="btn btn-primary col-xs-6">Visualizar</button>
+                        <button class="btn btn-default col-xs-6">Adicionar</button>
+                    </div>
+
+                </section>
+            </article>
+
+        </div>
+
+
+
+        <div class="col-md-5 col-xs-12 col-sm-12 div-estatistica  row">
+            <span class="span-title">Estatistica</span>
+
+            <article class="col-md-12 article-estatistica">
+
+                @*<section class="col-md-12 section-estatistica">
+                        <span class="conteudo-title">Geral </span>
+                        <hr />
+                    </section>*@
+                <section class="col-md-12 section-estatistica">
+                    <span class="conteudo-title">Mes passado</span>
+                    <hr />
+
+                    <div class="text-center" style="margin:auto" id="imagem">
+                        <span class="span-descricao"><img style="width:100%;height:100%" alt="icone-imagem" src="~/fonts/Captura de ecrã_27-3-2024_231211_.jpeg" /></span>
+                        @*<img  alt="estatistica do mes passado" src="~/fonts/Captura de ecrã_27-3-2024_231211_.jpeg" />*@
+
+                        <div class="item-estatistica row col-md-12">
+                            <div class="itens col-xs-6">Publicadores com actividade <span style="background-color:blue" class="cor-item"></span></div>
+                            <div class="itens col-xs-6">Publicadores sem actividade <span style="background-color:darkorange" class="cor-item"></span></div>
+                            <div class="itens col-xs-6">Pionerios <span style="background-color:yellow" class="cor-item"></span></div>
+                            <div class="itens col-xs-6">Estudos dirigidos<span style="background-color:lightcoral" class="cor-item"></span></div>
+                        </div>
+                    </div>
+
+                </section>
+
+
+
+            </article>
+
+        </div>
+    </div>
+
+
+    @*<footer class="navbar-fixed-bottom">
+            <span>Sistema de entrega de relatorios</span>
+            <span>2024</span>
+        </footer>*@
+
+
+
+</main>
+

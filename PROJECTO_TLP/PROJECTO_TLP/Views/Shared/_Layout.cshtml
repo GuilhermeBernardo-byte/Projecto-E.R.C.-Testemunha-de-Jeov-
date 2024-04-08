@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Congreg</title>
+
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css" />
+
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        #form-registrar {
+            font-size: 2.2vh;
+        }
+
+        .form-control {
+            width: 400px;
+        }
+
+        #containerPrincipal {
+            box-shadow: none;
+        }
+    </style>
+
+</head>
+<body style="background-color:#fff;padding:0;margin:0">
+
+
+    <div id="containerPrincipal" style="height:100vh;padding:0">
+
+        @RenderBody()
+
+
+
+    </div>
+
+    @*<div class="dropdown">
+            <button class="btn btn-primary dropdown dropdown-toggle " data-toggle="dropdown" type="button" id="dropdownMenuButton" aria-expanded="false">
+                Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item btn-block" href="#">Action</a>
+                <a class="dropdown-item btn-block" href="#">Another action</a>
+                <a class="dropdown-item btn-block" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item btn-block" href="#">Something else here</a>
+
+            </div>
+        </div>*@
+
+    <script src="~/Scripts/scriptInicial.js"></script>
+
+    <script src="~/Scripts/ValidacaoCampos.js"></script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
