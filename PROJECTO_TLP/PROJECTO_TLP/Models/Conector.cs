@@ -8,8 +8,8 @@ namespace PROJECTO_TLP.Models
 {
     public class Conector
     {
-        public static string connect = "server=127.0.0.1;database=uniao_tj;User Id=root;password=";
-        MySqlConnection connexao = new MySqlConnection(connect);
+        public static string connect { get; set; } = "server=127.0.0.1;database=uniao_tj;User Id=root;password=";
+       public MySqlConnection connexao = new MySqlConnection(connect);
 
         public void abrirconexao()
         {
